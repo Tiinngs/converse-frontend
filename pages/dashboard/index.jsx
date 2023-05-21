@@ -79,7 +79,7 @@ const page = ({ orders }) => {
 
 export default page
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const orders = await (await fetch(`${process.env.SERVER}/order`)).json();
     return {
         props: {
