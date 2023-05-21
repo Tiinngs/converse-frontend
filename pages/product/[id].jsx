@@ -26,7 +26,7 @@ const product = ({ products }) => {
             });
     }
 
-    return (
+    products ? (
         <div className="relative max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 mt-48 pb-10">
             <ProductImage product={products} />
             <div className="divide-y ">
@@ -51,7 +51,9 @@ const product = ({ products }) => {
                 </button>
             </div>
         </div>
-    );
+    ) : (
+        null
+    )
 };
 
 export default product;
@@ -68,7 +70,7 @@ export async function getStaticPaths() {
             { params: { id: "7" } },
             { params: { id: "8" } },
         ],
-        fallback: false,
+        fallback: true,
     };
 }
 
