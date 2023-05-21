@@ -82,11 +82,5 @@ export async function getStaticProps({ params }) {
                 products,
             },
         };
-    } else {
-        return {
-            props: {
-                products: null,
-            },
-        };
     }
 }
