@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.3s ease-out;
+}
+
+@layer components {
+    .button {
+        @apply border px-5 md:px-10 py-2.5 rounded font-semibold;
+    }
+}
