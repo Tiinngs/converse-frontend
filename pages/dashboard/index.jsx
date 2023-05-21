@@ -3,7 +3,7 @@ import { FaCartPlus, FaMoneyBillWave } from "react-icons/fa";
 const page = ({ orders }) => {
 
     let earning = 0;
-    orders.forEach(e => {
+    orders?.forEach(e => {
         earning += Number(e.price);
     });
 
