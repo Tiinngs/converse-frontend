@@ -25,7 +25,7 @@ const page = ({ orders }) => {
             });
     } 
     
-    return (
+    orders ? (
         <main className="min-h-screen max-w-7xl mx-auto px-8 xl:px-0 mt-48">
             <section className="flex flex-col space-y-12 pb-44">
                 <div className="w-full flex justify-center items-center gap-6">
@@ -68,7 +68,9 @@ const page = ({ orders }) => {
                 </table>
             </section>
         </main>
-    );
+    ) : (
+        null
+    )
 }
 
 export default page
