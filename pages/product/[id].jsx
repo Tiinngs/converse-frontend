@@ -26,7 +26,7 @@ const product = ({ products }) => {
             });
     }
 
-    products ? (
+    return (
         <div className="relative max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 mt-48 pb-10">
             <ProductImage product={products} />
             <div className="divide-y ">
@@ -51,8 +51,6 @@ const product = ({ products }) => {
                 </button>
             </div>
         </div>
-    ) : (
-        null
     )
 };
 
