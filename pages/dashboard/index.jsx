@@ -75,16 +75,9 @@ export default page
 
 export async function getStaticProps() {
     const orders = await (await fetch(`${process.env.SERVER}/order`)).json();
-    if (orders) {
-        return {
-            props: {
-                orders,
-            },
-        };
-    }
     return {
         props: {
-            orders: null,
+            orders,
         },
     };
 }

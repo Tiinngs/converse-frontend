@@ -68,23 +68,16 @@ export async function getStaticPaths() {
             { params: { id: "7" } },
             { params: { id: "8" } },
         ],
-        fallback: true,
+        fallback: false,
     };
 }
 
 export async function getStaticProps({ params }) {
-    const res = await fetch(`${process.env.SERVER}/products/${params.id}`);
-    const products = await res.json();
-    if (products.lenght !== 0) {
-        return {
-            props: {
-                products,
-            },
-        };
-    }
+    const products = await ( await fetch(`${process.env.SERVER}/products/${params.id}`)).json();
     return {
         props: {
-            products: null,
+            products,
         },
     };
+    
 }
