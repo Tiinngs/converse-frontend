@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FaCartPlus, FaMoneyBillWave } from "react-icons/fa";
 
 const page = ({ orders }) => {
