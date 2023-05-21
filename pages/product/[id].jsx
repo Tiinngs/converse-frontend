@@ -73,8 +73,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const products = await (await fetch(`${process.env.SERVER}/products/${params.id}`)).json();
-    if (products) {
+    const res = await fetch(`${process.env.SERVER}/products/${params.id}`);
+    const products = await res.json();
+    if (products.lenght !== 0) {
         return {
             props: {
                 products,
