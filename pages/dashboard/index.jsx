@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaCartPlus, FaMoneyBillWave } from "react-icons/fa";
 
 const page = ({ orders }) => {
 
-    let earning = 0;
-
+    const [earning, setEarning] = useState(0);
 
     async function dl(e, id) {
         e.preventDefault()
@@ -25,8 +24,10 @@ const page = ({ orders }) => {
     }
 
     useEffect(() => {
+        let earn = 0;
         orders?.forEach(e => {
-            earning += Number(e.price);
+            earn += Number(e.price);
+            setEarning(earn);
         });
     }, [])
 
